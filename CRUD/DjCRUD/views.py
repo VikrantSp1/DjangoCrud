@@ -30,7 +30,7 @@ class list_users(APIView):
                 user_list=Users.objects.filter()
                 print("in else")
                 print(user_list)
-                # serialized_data=UserlistSerializers(user_list,many=True)
+                serialized_data=UserlistSerializers(user_list,many=True)
                 return Response({'status':200,'user_list':serialized_data.data})
             
         except Exception as e:
